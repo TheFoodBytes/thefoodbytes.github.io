@@ -1,2 +1,1 @@
-# thefoodbytes.github.io
-FoodBytes Official Website.
+<script> location.href = '/art.html'; </script>
