@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Story</title>
+
+        <script type="text/javascript">
+
+            var timer = 00;
+            var resets = 0;
+
+            var labx = 1400;
+            var ritey = 700;
+            var fbx = 1400;
+
+
+            var chrisx = 150;
+            var chrisy = 400;
+
+            var andreix = 440;
+            var andreiy = 500;
+
+            var georgex = 700;
+            var georgey = 400;
+
+            var earlx = 900;
+            var early = 400;
+
+            var ryanx = 500;
+            var ryany = 300;
+			
+			var ryan3x = -150;
+            var ryan3y = 350;
+			
+			var deanx = 800;
+			var deany = 350;
+			
+			var laserx = 650;
+
+            var rocky = -720;
+            var rock2y = -1440;
+            var rock3y = -2160;
+            var fby = -2880;
+            var laby = 0;
+
+            var technox = 0;
+            var linex = -1400;
+            var grassx = -2800;
+            var grass2x = -4200;
+            var fb2x = -5600;
+
+            var flarey = 2680;
+
+            var flarewidth = 0;
+            var flareheight = 0;
+            var play = 1;
+
+
+
+
+
+            //Sky Variables
+
+            var sky1y = -720;
+            var sky2y = -1440;
+            var sky3y = -2160;
+            var sky4y = 0;
+
+            function draw() {
+                let canvas = document.getElementById("grid");
+
+
+                if(canvas.getContext) {
+                    let c = canvas.getContext('2d');
+                    c.clearRect(0,0,1400,720);
+                    
+                    if (timer < 400 || resets < 400){
+                        c.fillStyle = "black";
+                        c.fillRect(0,0,1400,720)
+
+                        c.fillStyle= "white";
+                        c.font = "48px monospace";
+                        c.fillText("Food Bytes", 550, 100);
+                        c.fillText("(2023)", 610, 200);
+                        c.fillText("Location: Ryan's AI Lab", 360, 300);
+                        }
+                        if (timer == 400){
+                            resets = 0;
+                        }
+                    if (timer < 1000 ){
+                        if (timer > 200)
+                        {
+                            c.drawImage(ai,labx,0,1400,720);
+                            labx = labx-10;
+                        }
+                        if (labx < 0 ){
+                            labx =0;
+                            if (timer <600){
+                                c.drawImage(ryan, 500, 150);
+                                c.drawImage(rite, 425, 100);
+                            }
+                            if (timer >600){
+                                labx =0;
+                                if (ritey >150 )
+                                    c.drawImage(ryan, 500, 150);
+                                c.drawImage(rite, 500, ritey, 400, 10);
+                                ritey = ritey-5;
+                            }
+                        }
+                    }
+
+                    if (timer == 1000){
+                            resets = 0;
+                        }
+                    
+
+
+                    if (timer >800 && timer < 1400){
+                        c.drawImage(fb, fbx, 0, 1400, 720)
+                        fbx = fbx-7;
+                    }
+                    if (fbx < 0){
+                        fbx = 0;
+                        c.drawImage(chris, chrisx, chrisy)
+                        c.drawImage(andrei, andreix, andreiy, 200, 250)
+                        c.drawImage(george, georgex, georgey)
+                        c.drawImage(earl, earlx, early)
+                    }
+                    if (timer == 1300){
+                            resets = 0;
+                        }
+
+                    if (timer > 1300){
+                        
+                        c.fillStyle = "black";
+                        c.fillRect(0,0,1400,720)
+
+                        c.fillStyle= "white";
+                        c.font = "48px monospace";
+                        if (timer < 1700){
+                            c.fillText("⛥ s̴o̴m̸e̷t̷h̵i̶n̷g̷s̵ ̴w̷r̴o̶n̸g̴.̷ ⛧", 550, 100);
+                        }               
+                        if (timer > 1400 && timer < 1700){
+                            c.fillText("⛥ ψ̸͎̂ ̴̣̅⛥̵̗͗ ̴̝͑y̶̧̌o̸͍͒ù̶͕ ̴̩̚à̸ͅr̵͈̕e̶̙͗n̸̫̿t̸̜̐ ̷͔̽s̴̘͋u̷͖̅p̶͍̊ṕ̴̫o̶͈͗s̴̜͂e̵̻̊ḑ̸͘ ̷͔̅t̵̟̂o̴̘̿ ̴͕͂b̵̛͕ĕ̸̙ ̴͉̈h̵̫͊ȅ̴̜r̵̛̹e̷̖̽ ̷͉̐⛥̴̦̤͛͘ ⛧", 0, 200);
+
+                            if (timer > 1500 && timer < 1700){
+                                c.fillStyle= "red";
+
+
+
+                                c.fillText("☠ ŷ̴̡̥̻͎ȯ̷͙̘̃̈̅̄́̀̿́̚ǘ̷̢̨̦̗̫̪͚̼̭̲̣̥̫̪̉̽̾̈́̚ ̸̢͖͈͍̑n̶̜͛̃̀͝ę̴̛͙̺͇̩̖͈̞̲̋͒̾̀̽͒̅͑͜ę̸̨̨̛̼̰̼̲̞̰͖̹̘̮̓̏͋̅͜͠d̴̨̺̪͎̰́̃̅̽̿ ̷̣̦̠͎̘̬̜̭̉̐̿̆̓̌̕ͅţ̵̙̩͔̘̩͖͉̣̱̗̞̀͆̂̿́͊̋́̈́̊̍̚̕͠ô̸̼̭̳̈́̍͐̔́͊̍̇̌͗̑ ̷̛̟͎̤̘̗̝̱͙̐̆̀̍̚l̶̯̝̀͊͌ͅę̷͉̜͖̭̱̘̲͎̙͒̑̈́͐̽̀͒̆̕a̸̭̤̗̦̩̞̅̈́̐̀̚v̸̢̡͎̹̺̒͐̊̃͛̿̓ͅe̸͎͎͎̙͙̠͉̙̳̩̫͙͉̐̈́̍̂͗͆̑̉̑ͅ.̷̘̎̓̑̾͘̚ ̴̧̡̛̥͇̳̠̼̰̖͖̳̺͐͑́̉̋͗͌̈́̈́̊͘̚͝ ☠", 500, 400);
+                            }
+                        }
+                        if (timer > 1700 && timer < 2000){
+                            c.fillStyle= "red";
+
+
+
+                            c.fillText("ψ ̴̡͈̝̫͕̟̰̦́͗ṫ̷̯͎̇̍̈́͒̈́̿̿͘͝h̶̡̟͎͈̦̗̲͕̖̦̫̼͛ị̴̢̜̞̬̤̦̩̋́͑̾̋̕s̴̡͖͎͉͚͓̯͉̜̬̽͑̄͝ͅ ̷̛͍̼͍͓̠̩̖͈͙̄̔̆̈́̔̎̎̓͠ͅi̵̻̰̾̋̈͆̓̓͘ṣ̴̜̤́͐͗̎̾̿͑́͆̎͒ ̶̯̠̾̅i̶̜̯̻̣͐̐̍̑̈̆͠ḿ̸̢̛̞͖̭̙͔̠͚̠p̴̨̪̹͉̣͈̗̝̬͚͛͛͛̈́͒ͅo̷͙͇̍̀̄̽͑̎̓͌̏̋̓̃͝ș̵̠̤̯̘̟͇̤͂̀̍̂́̎̆̈̎͘͝͠s̸̢̛̟̞͇̦̭̩̼͚̣͉̞̖̍̽̀̄̾̓̉̒̆i̸̡̨̻̦̣͖̺̞̘͇̣͉̔͛̓̎̎͝b̸̲͓̪͖̹͔̬͕͖̓̃̈́͂̑̈́̄̀l̸͕͆͂̐é̴̩͖͚̠̾̈́̑̕ ̴̨̡̧̛͍͇͎͚̰̱͇̿̓̂̂͊̓̚͘̕͠ͅ ⛧", 100, 200);
+
+
+
+
+                            if (timer > 1800 && timer <2000){
+                                c.fillText("y̷̡̢̹̦̼̰̜̩̞̆̾̏̋̃́̿͌͜o̶̯̯̯̽͐͌͋͑̅̄͐͐̈́͛͌̕͘͝͝u̸̡̝̫͙͖̼̣͔͔͔̝̗̲̘̟͕̠̹̍̐̊́̎̓̈̆͗̅̑̊̕͘ ̵̨̡̹͖͕͉̹̲̠͔͖̦̬͙̅̌̌̂͛̾͂͋̂͒͘͝ͅǎ̸̧̧̗̺͔͙̯͚̤͓̱̓̔͐͊̾̔̉̚̕͜ṛ̵̨̡̯̘̮͔͌̑͒͒̈͋͋̕͝ͅė̷͎͒̾̄̃͂̓̋ ̴̧̛̩̱̻̰̮̖̼̈͗̈́̎̈̐̈́͐̾́͋̂͘ń̵̨̨̪̱̜̟̹͎͇̣̠̳̠̳̅̏́̀͂͂͘ͅṏ̴̡̹͚̟̟̦̖́͛͒́̿͌͐̾̿̕͝t̶̛̳̫̟̍̈͛̽͌̽̔̀̿̒̋̆͊̕͜ ̸̧̢̧̛̜̥̮̠͓̜͈̫̜̰̥̠͂͂̿̆̂̆̽̇̃͂̏͜͠ͅs̶̢̧̢͍̰̙̯͉̳͙̝͔̰̲͈̉̂̀͂̀̉̐͆u̷̻̰̮͊̌p̶̡̱̞̝̰̟̫̅̇̓͐͗͋̋̋̋́̇̑̾̄͛́̚͝ͅp̶͎͉̖̬̱͖̠̬̣̲̼͉̣̬̓̌̈́́̓̇͆͘͝o̵̝̣͍̳͍͈͋͗̆̀̓̏͂̈́͑͊̕̕ṣ̷̰̗̐̅̾͂̏͌̋̌̎̚̕͜͝͠ͅḛ̸̭̬̳͉͚̜̩̦̦̣̙̜͈̮͎̓̂̏̒̃̀̑͋͌͊̕̕͜͜͝d̶̠͌́̍̈̑̈́̕ ̶̧̧̮̥͇͚̼̥̬͇͉̞̣̥͔͙̯̆͜͝ţ̴̛͍̹̹̪̮̃͑͗̏̌̾̈́̓̈̇̚͝͠͝ơ̴̧͍̼̯̪̇̑̌͌̉̔̇̈́̈́̌̂̕̚̕͝͠ ̴̨̡̦̰͉̖̣̩̗̑̋͌̃̍͆̾͗̉̇̓͒̈́́̏̈́̐͝ͅj̵̧̧̨͎̳̳̞͓̪̟̐̈́̈́̇̕ȕ̷̡͇̯̩̺̜̼̼̤̦̠̱̮̈́̑́̃̑̽̍̇̅͂̾̉͋̄͗͘͜͝m̶̳̪̺͍̻̳̳̱̜̬̻͂͜p̴̡̨̦̯̦͎̈́̋͛̑̃͠͝ ̴̧̝̪͈͚̤̳͎̫̳͈̥̯̞͖̠̜͓̀̉̀̎͆̈́͛̊͆t̸̥͐̌̎̃̈́͑̂̎̂̅͐̕̕̕͝ĭ̶̧͌̌̄̏̀m̴̧̛̲̱̳̗̭̩̪̩̱̗͎͚̆͛̂͌̅͂́̽̿͜͜͠͝e̶̡̬̤̥̞͓͓̺̳̦̭͇͈͕̠̪̺͆̈̾̈́͊̀͆̃͛̊̀͐̇̈́̆͘͝l̷͉͊̽ȋ̸͇̰̠͕̦̂̍̎̐̎n̴̨̻̼̝̬̜͈̈́͗͝ͅè̴̙̣͖̩̲̳̙̘̰̀̋͋͑͆s̵̩̤̞͕̖̿̏̊̾̕", 200, 500);
+                            }
+                        }
+                        if (timer > 2000 && timer < 2400){
+
+                            ritey = 100;
+
+
+
+                            c.fillStyle= "purple";
+                                c.fillText("i̵͔̪̎ţ̵̛̲̬͍͙̗̮̼̻͉̩̠̬̖̥͉̮̞͖͉̥͈̰̩͙̦̪͆́͆͗͂̅̅͋́̍̇̿͆̔̈́̇̀̌̅͠ş̸̛͔̬͈͈̗̱̠̟̞̹͖͇͉̤͕͉̼̫̺͈̯̄̂̽͐̃̍̅̒̈́́̃͋̏̂̑̂̈́̾̾́̏͗̇͛̾͠͠͝ͅ ̴̡̧̡̥̳̹͖̂̓͒̈́̾̽̄͆͒̈́̎t̶̨̡̛̛̼͉̗͉̗͉͉̲̩͙̲͔͔̜̥̂̈́̐̎̅̈̔̑͒̊̐̏̅́̋̉̓̃̌͜͝͠ỏ̵̡̧͈̻͉̯͓̬̪͔͚͙͍̗̖̼̟̠̦̹̲̝̩͎̲̈͛̾̂͆̑̈́͆́̌̅́̅̆͋̂̏͊̐̄̊͌͊͋̀̚̕͜͝͠ǒ̸̧̗̮̜̫̌̈́̈́͆̒̎̃̇͆̃͗̄͗͛̈́̉̓͋́̋̽̎͐̋͑͊̃̍̕̚͠͝ ̵̡̨̧̪̤̲̙̮̥͖̭͎̠̘̗͕̯̗̯̠̝̮̭͆̀͊̄̔̐̓̔̚ļ̴̩̮̹̞̰̙̫̀̓͂̏̿̔͊̀͗͝á̸̢̨̩̮͙̘̼̬̝͎̹͍̏̀̒͂̏͑́͌͌̍͑̄̋̾́͊̚̚̚͠t̴̹̤̖̺̅̈́̈́͆̈́̉̐̉͊̐̈́͆̊̎̒̋̐̄̊̂͛̕̕ë̵̯̆̏̽͐̐͆̅̏́̽́̀͊́͌̈́̌̃͌̄̈̆͛̀̏͗̀̿͘.̷̢̨̡̛̫͉̦̳̗̩̪̳̰̭̫̖̙̦͙̘̻͎̄̊͆̌̌̿̈̌͌̈́̐̽́̀̀̅̿̀̇̋͑̒̋̕̚̕͝ͅ ̷̡̛̬̠̘͉̣̖̖̙͇̼͓̜͕͕̳̖̹̥̹͉͙͈̣̱̿͆̀̓͛̓͋́͒̆̒̄͛̎̾́̋̃͑͋̚͜͝ͅǐ̶̡̨̢̦̜͚̳̩̗͈͍̤̱͙̹͇͔͈͖̭̰̞̬̌͜ͅm̵̡̨̢̛͈̻̠̘͓͉͇͓͉̜̓̌͂̋͆̄́̐͑̀̎́͐́̂̔̇͐͘͜͜ͅ ̴̢̨̢̣͔͙̰̫͎̮̣͚̖͎̲̜͇͖̺͍̼̭̟͖̖͓̂̃̋̃͐̄̐̍́̉͋͗́̔͜s̶̡̡͕̖̲̞̫̊̔̃͊́̍̓͌͒̈́́̉̆͋̑͊͂̆̄̚̕͝͠͝ó̸̖̥͍̪̺̻͙̭̙͎͈̩͚̤̟̦̭͌̂̈́̿̔̈́̈́͊̎̐̈̑̍͘͜͜͝r̶̢̡͇͙̩̭̼̪͙͎̭̣̼̥̬̞͉̝̙̫̰͈̘̣̓̉̿̽̾͆̎̍̃̈́̇̓͋͊͋͆̌̊̇̓̈́̍̍͑́̄̉̂ȓ̵̨̨̧̟̻̱͍̻͙̫̲̪̜͔̦̱̮͚͇̤̭̀̿͒̓́̎̓̓̔̏̉̅̾̀̑̀̿̽̂͊͐̑͒̾́̓ͅͅȳ̷̨̆́̎̈͑̆ ̵̺̤̟̖͉͓̃̽̊͌̇̎̎͌͌̅̓̌̔̒̈́̏̊͌͛̔̎͐̍̍͂̒͂̋͂̈́̐͘̚̕l̵̡̨̢̲̥̦̳̮̠̯̳̬͚̘̜̟͕̜̖̻̲̩̣̼̻͔̞̳͉̳͔̪̄͌̈͗́́̾̀̓͐͂́͝͠͠i̴̡̧̡͙̹̟͍͖̳͙͔̠̩̹͕̗̩̣̹̹̫̠̼̩̰̣̲̥̯̿̈́̎̌̍̔̎̾͘͜͝͝͠ͅt̷̛͙̦̖͓̮̬̅̆̈́͑̂́̓͛̄͒̾̈́̀̔͌͛̄͋̿̐̄̎̀̓̕̕͘͜͠ţ̴̲͍̙̗͇̤̥̭͕̝̪͎̩̙̊̅́͋́͂̿̍̐͋̌̏͂̍̈́̈̈͌̾̍̓̚͝͝l̸̢̧̨͓̺̝͚̲̝̞̙̫̙̅̇̓̈̈́͛͌͂̓͐͛̿͂͘͜͠͠ẹ̶̑̅̅̚ ̵̡̥͓͍̺̞̳̺̣͕̪̩̭͖̲̥̝̞͖̮͎̲̙̖̟͉̙̰̳̲̠́͆͋̎̈́̒̐̌̈͗͆̄̐́̀̾̉̂͊́̔́̈̂̈́̒̈́̓́̕͘͜͠ò̸̬̫̟̝̫͇̣͍̟͙͇͖̟̮̮̻̙̌̎̀͆͜͝n̶̛̙̙͔̻̫̺̥̦͓̠͖̼̘̜̬̣̱͗̇͗̿̊̃̊͐͂͊̍͊̐͌͆̽̑̒̋͂̽̈́͂̿̾̈́̅̇̚͘͝͝ḛ̵̼͈͔͓̗̋̾̔̆͜ ", 100, 400);
+                        }
+                        
+
+
+
+                        //words
+                        if (timer == 2400){
+                            resets = 0;
+                        }
+
+
+                        if (timer >2400 && timer <3600){
+                            c.drawImage(lab3, 0,0,1400,720);
+                            c.drawImage(ryan, ryanx, ryany);
+                            c.drawImage(rite, 500, ritey, 400, 10);
+                            c.drawImage(ryan3, ryan3x, ryan3y);
+							c.drawImage(dean, deanx, deany);
+                            ritey = ritey+5;
+							
+							if (timer > 2600 && timer < 2643){
+								//  c.fillStyle= "white";
+								// c.font = "48px monospace";
+								// c.fillText("laser sequence", 600, 50);
+								c.drawImage(laser, laserx, 350, 100, 200);
+								laserx = laserx+10;
+							}
+							if (timer > 2643 && timer < 3600){
+								deanx = 5000;
+							}
+						}
+                        if (timer > 3600 && timer < 3650){
+								ryanx = 1000
+						}
+						if (timer > 3650 && timer <4500){
+                            
+							c.drawImage(lab3, 0,0,1400,720);
+							c.drawImage(ryan, ryanx, ryany);
+							c.drawImage(rite, 700, ritey, 400, 10);
+							c.drawImage(ryan3, ryan3x, ryan3y);
+						}
+                        if (timer >3800 && timer <3900){
+                            c.drawImage(rite, 400, 100);
+                            ritey = 700;
+                        }
+                        if (timer > 3900 && timer < 4230){
+                            c.drawImage(rite, 500, ritey, 400, 10);
+                            ritey = ritey-5;
+                        }
+
+                        if (timer >4230 && timer <6000){
+                            c.drawImage(ai,0,laby,1400,720);
+                            c.drawImage(rock,0, rocky,1400,720);
+                            c.drawImage(rock,0, rock2y,1400,720);
+                            c.drawImage(rock,0, rock3y,1400,720);
+                            c.drawImage(fb,0,fby,1400,720);
+
+                            if (timer > 4300 && fby <0){
+                                laby = laby+4;
+                                rocky = rocky +4;
+                                rock2y = rock2y +4;
+                                rock3y = rock3y +4;
+                                fby = fby + 4;
+                            }
+                            if (timer > 4300 && fby >=0){
+                                c.drawImage(chris, chrisx, chrisy)
+                                c.drawImage(andrei, andreix, andreiy, 200, 250)
+                                c.drawImage(george, georgex, georgey)
+                                c.drawImage(earl, earlx, early)
+                            }
+                        }
+
+
+                        if (timer >6000 && timer < 6200){
+                            c.fillStyle= "white";
+							c.font = "48px monospace";
+							c.fillText("A Year Later", 450, 400);
+                            chrisx = 350;
+                            chrisy =150;
+                        }
+
+                        if (timer > 6200 && timer < 7000){
+                            c.drawImage(techno,0,0,1400,720);
+                            c.drawImage(chris, chrisx, chrisy, 700, 950);
+                            rocky = 720;
+                            rock2y = 1440;
+                            rock3y = 2160;
+                            laby = 2880;
+                            fby = 0;
+                        }
+
+                        if (timer > 7000 && fb2x < 0){
+                            // c.drawImage(ai,0,laby,1400,720);
+                            // c.drawImage(rock,0, rocky,1400,720);
+                            // c.drawImage(rock,0, rock2y,1400,720);
+                            // c.drawImage(rock,0, rock3y,1400,720);
+                            // c.drawImage(fb,0,fby,1400,720);
+
+                            c.drawImage(techno,technox,0,1400,720);
+                            c.drawImage(line, linex, 0, 1400, 720);
+                            c.drawImage(grass, grassx, 0, 1400, 720);
+                            c.drawImage(grass, grass2x, 0, 1400, 720);
+                            c.drawImage(fb, fb2x, 0, 1400, 720);
+                            technox = technox+4;
+                            linex = linex +4;
+                            grassx = grassx +4;
+                            grass2x = grass2x +4;
+                            fb2x = fb2x + 4;
+                            sky4y = -2880;
+                        }
+                        
+
+                        if (timer >7000 && fb2x >=0){
+                            c.drawImage(fb, fb2x, fby, 1400, 720);
+                            c.drawImage(ai,0,laby,1400,720);
+                            c.drawImage(rock,0, rocky,1400,720);
+                            c.drawImage(rock,0, rock2y,1400,720);
+                            c.drawImage(rock,0, rock3y,1400,720);
+                            c.drawImage(sky1,0, sky1y, 1400, 720);
+                            c.drawImage(sky2,0, sky2y, 1400, 720);
+                            c.drawImage(sky3,0, sky3y, 1400, 720);
+                            c.drawImage(sky4,0, sky4y, 1400, 720);
+                           
+                            if (timer >8600 && laby >450 && timer < 9300){
+                                fby = fby - 4;
+                                rocky = rocky - 4;
+                                rock2y = rock2y - 4;
+                                rock3y = rock3y - 4;
+                                laby = laby- 4;
+                                flarey = flarey -4;
+                                sky1y=sky1y-4;
+                                sky2y=sky2y-4;
+                                sky3y=sky3y-4;
+                                sky4y=sky4y-4;
+                                ritey = 750;
+                            }
+                            if (laby <= 450 && timer >= 9300){
+                                c.drawImage(flare, 0, flarey,flarewidth,720);
+                                flarewidth= flarewidth+30;
+                            }
+                            if (timer > 9400){
+                                c.drawImage(rite, 350, ritey, 700, 10);
+                                ritey = ritey-5;
+                            }
+
+                            if (ritey < 0){
+                                fby = fby + 4;
+                                rocky = rocky + 4;
+                                rock2y = rock2y + 4;
+                                rock3y = rock3y + 4;
+                                laby = laby+ 4;
+                                sky1y=sky1y+4;
+                                sky2y=sky2y+4;
+                                sky3y=sky3y+4;
+                                sky4y=sky4y+4;
+                                var sky41x = 0;
+                                var sky4x = 1400;
+                             }
+                            
+                            
+                         }
+
+                        if (sky4y >= 0 && timer > 9800){
+                                sky4y=0
+                                c.drawImage(sky4,sky41x,0, 1400, 720);
+                                c.drawImage(sky4,sky4x,0, 1400, 720);
+                                c.fillStyle= "white";
+                                c.font = "48px monospace";
+                                if (timer >11000 && timer < 11200){
+                                    c.fillText("i wont lie.", 450, 200);
+                                    c.fillText("i am so bored.", 400, 250);
+                                    c.fillText("i have an idea! heres a presentation!", 300, 300);
+                                }
+                                if (timer > 11230 && timer < 11700){
+
+                                    c.drawImage(ladder, 350, 100);
+                                    //This is a ladder. Its probably my favourite ladder. Id appreciate it if no one ever made fun of this ladder. thank you.
+                                }
+                                if (timer > 11730 && timer < 12500){
+
+                                    c.drawImage(promo, 0, 200, 1400, 500);
+                                    //This is my youtube channel! many of you prolly didnt know i 
+                                }
+                                if (timer > 12530 && timer < 12700){
+
+                                    c.drawImage(lonely, 0, 200, 1400, 500);
+                                }
+                                if (timer > 12730 && timer < 13500){
+
+                                    c.drawImage(stocks, 350, 100, 1400, 500);
+                                }
+                                if (timer > 13530 && timer < 14000){
+
+                                    c.drawImage(stats, 0, 0, 1400, 720);
+                                }
+                                
+                                if (timer > 14030 && timer < 14503){
+
+                                    c.drawImage(comment, 0, 0, 1400, 720);
+                                }
+
+                                if (timer > 14530 && timer < 15000){
+
+                                    c.drawImage(caleb, 0, 0, 1400, 720);
+                                    c.fillText("calebtheeator.github.io", 450, 400);
+                                }
+
+                                if (timer > 15030 && timer < 15200){
+
+                                    c.fillText("guh.", 450, 400);
+                                }
+
+                                if (timer > 15230 && timer < 40000){
+                                    c.fillStyle= "black";
+                                    c.fillText("i will now read baby its cold outside", 450, 400);
+                                    c.drawImage(cold, 0, 0, 1400, 720);
+                                }
+                                
+
+                            }
+
+                    }
+
+                        // 
+                        
+            
+
+
+
+//                     //tsting station and timers
+                    // c.fillStyle= "white";
+                    //     c.font = "48px monospace";
+                    //     c.fillText("timer " + timer, 50, 150);
+//                         c.fillText("resets " + resets, 50, 50);
+// //                        c.fillText(lablabx, 50, 100);
+// 					c.fillText("flare " + flarey, 50, 100);
+                    timer = timer +1;
+                    resets ++;
+                    
+                    if (play==1){
+                    let mySound = new Audio('foodbytes.mp3')
+                    mySound.play()
+                    }
+                   
+                    play = 0;
+                    window.requestAnimationFrame(draw);
+                }
+            }
+        </script>
+    </head>
+    <body style="background-color: black;">
+        <canvas id="grid" width="1400px" height="720px" style="border: 1px solid blue; text-align: center;"></canvas>
+        <button onclick="draw()">GUH?!?</button>
+        <!--Scene 1-->
+        <img src="ailab.jpg" alt="ai" id="ai" style="display: none">
+        <img src="aiman.png" alt="aiman" id="ryan" style="display: none">
+        <img src="ritual.png" alt="rits" id="rite" style="display: none">
+
+
+        <!--Scene 2-->
+        <img src="foodbytes.jpg" alt="fb" id="fb" style="display: none">
+        <img src="chris.png" alt="chris" id="chris" style="display: none">
+        <img src="andrei.png" alt="andrei" id="andrei" style="display: none">
+        <img src="earl.png" alt="earl" id="earl" style="display: none">
+        <img src="george.png" alt="george" id="george" style="display: none">
+        <img src="ailabnew.jpg" alt="lab3" id="lab3" style="display: none">
+		<img src = "ryan3.png" alt = "ryan 3" id = "ryan3" style = "display: none"/>
+        <img src = "jim.png" alt = "jim" id = "dean" style = "display:none"/>
+		<img src = "laser.png" alt = "laser" id = "laser" style = "display: none"/>
+
+
+        <!--scene 3-->
+        <img src = "rock.jpg" alt = "rock" id = "rock" style = "display: none"/>
+    
+        
+        <!--Scene 4-->
+        <img src = "techNOoffice.jpg" alt = "techno" id = "techno" style = "display: none"/>
+
+
+        <!--Scene 5-->
+        <img src = "theline.jpg" alt = "line" id = "line" style = "display: none"/>
+        <img src = "grass.jpg" alt = "grass" id = "grass" style = "display: none"/>
+
+        <!-- Scene 6-->
+        <img src = "lightflare.png" alt = "flare" id = "flare" style = "display: none;"/>
+
+
+
+        <!--sky thingy-->
+        <img src = "nightsky.jpg" alt = "INK!!" id = "sky1" style = "display:none;"/>
+        <img src = "onlysky.jpg" alt = "sky" id = "sky2" style = "display:none;"/>
+        <img src = "space.jpg" alt = "sky" id = "sky3" style = "display:none;"/>
+        <img src = "blacksky.jpg" alt = "sky" id = "sky4" style = "display:none;"/>
+
+        <!--Slideshow-->
+
+        <img src = "im_so_lonely.jpg" alt = "lonely" id = "lonely" style = "display: none;"/>
+        <img src = "stocks.jpg" alt = "stocks" id = "stocks" style = "display: none;"/>
+        <img src = "Screenshot (704).png" alt = "promo" id = "promo" style = "display: none;"/>
+        <img src = "ladder.jpg" alt = "ladder" id = "ladder" style = "display: none;"/>
+        <img src = "statistics.png" alt = "stats" id = "stats" style = "display: none;"/>
+        <img src = "commentary_white_on_red.png" alt = "comment" id = "comment" style = "display: none;"/>
+        <img src = "Caleb.jpg" alt = "caleb" id = "caleb" style = "display: none;"/>
+        <img src = "cold.jpg" alt = "cold" id = "cold" style = "display: none;"/>
+
+    </body>
+</html>
